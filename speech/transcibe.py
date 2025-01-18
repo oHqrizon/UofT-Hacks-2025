@@ -1,3 +1,5 @@
+#! python3.7
+
 import argparse
 import os
 import numpy as np
@@ -12,7 +14,6 @@ from sys import platform
 
 
 def main():
-    #conditional argument to say model still loading 
     parser = argparse.ArgumentParser()
     parser.add_argument("--model", default="medium", help="Model to use",
                         choices=["tiny", "base", "small", "medium", "large"])
@@ -20,9 +21,9 @@ def main():
                         help="Don't use the english model.")
     parser.add_argument("--energy_threshold", default=1000,
                         help="Energy level for mic to detect.", type=int)
-    parser.add_argument("--record_timeout", default=1,
+    parser.add_argument("--record_timeout", default=2,
                         help="How real time the recording is in seconds.", type=float)
-    parser.add_argument("--phrase_timeout", default=1,
+    parser.add_argument("--phrase_timeout", default=3,
                         help="How much empty space between recordings before we "
                              "consider it a new line in the transcription.", type=float)
     if 'linux' in platform:
@@ -91,6 +92,9 @@ def main():
     # Wait for user input to start recording
     input("Type 'start' and press Enter to begin recording: ")
 
+    # Initialize the last write time
+    last_write_time = datetime.utcnow()
+
     while True:
         try:
             now = datetime.utcnow()
@@ -130,6 +134,17 @@ def main():
                     print(line)
                 # Flush stdout.
                 print('', end='', flush=True)
+
+                # Check if 10 seconds have passed since the last write
+                if (now - last_write_time).total_seconds() >= 10:
+                    # Ensure the speech directory exists
+                    os.makedirs("speech", exist_ok=True)
+                    # Write the transcription to a file in the speech directory
+                    with open(os.path.join("speech", "transcription.txt"), "w") as f:
+                        for line in transcription:
+                            f.write(line + "\n")
+                    # Update the last write time
+                    last_write_time = now
             else:
                 # Infinite loops are bad for processors, must sleep.
                 sleep(0.25)

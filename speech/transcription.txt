@@ -1,0 +1,4 @@
+Hello
+This is a test. Please write to the file.
+Hello, why is it not? We're gonna crash it.
+Oh, there you go. Nice. Now we change the sweats.
