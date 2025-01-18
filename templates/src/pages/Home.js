@@ -26,41 +26,41 @@ const Home = () => {
 
   return (
     <div className="home-container">
-      <div className="form-container">
+      <div className="title-section">
         <h1>Teaching Monitor</h1>
         <h2>Enhance Your Teaching Skills</h2>
-        
-        <form onSubmit={handleSubmit}>
-          <div className="input-group">
-            <label>Name</label>
-            <input
-              type="text"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              placeholder="Enter your name"
-              required
-            />
-          </div>
+      </div>
+      
+      <div className="form-container">
+        <div className="input-group">
+          <label>Name</label>
+          <input
+            type="text"
+            value={name}
+            onChange={(e) => setName(e.target.value)}
+            placeholder="Enter your name"
+            required
+          />
+        </div>
 
-          <div className="input-group">
-            <label>Education Level</label>
-            <select
-              value={education}
-              onChange={(e) => setEducation(e.target.value)}
-              required
-            >
-              <option value="">Select Education Level</option>
-              <option value="Elementary">Elementary</option>
-              <option value="Middle">Middle School</option>
-              <option value="Highschool">High School</option>
-              <option value="University">University</option>
-            </select>
-          </div>
+        <div className="input-group">
+          <label>Education Level</label>
+          <select
+            value={education}
+            onChange={(e) => setEducation(e.target.value)}
+            required
+          >
+            <option value="">Select Education Level</option>
+            <option value="Elementary">Elementary</option>
+            <option value="Middle">Middle School</option>
+            <option value="Highschool">High School</option>
+            <option value="University">University</option>
+          </select>
+        </div>
 
-          <button type="submit" className="submit-button">
-            Start Journey
-          </button>
-        </form>
+        <button type="submit" className="submit-button" onClick={handleSubmit}>
+          Start Journey
+        </button>
       </div>
     </div>
   );

@@ -1,11 +1,19 @@
 /* Evaluation Page CSS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
 html, body {
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%;
+    width: 100%;
+    overflow-x: hidden;
     font-family: 'Arsenal SC', serif;
     color: #fff;
+    background: linear-gradient(150deg, rgba(10, 17, 40, 0.95) 0%, rgba(26, 35, 126, 0.95) 100%);
 }
 
 .evaluation-page {
@@ -19,6 +27,7 @@ html, body {
     display: flex;
     align-items: center;
     justify-content: center;
+    margin: 0;
 }
 
 .evaluation-container {
