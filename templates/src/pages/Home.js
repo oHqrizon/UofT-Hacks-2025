@@ -1,121 +1,123 @@
 // // pages/Home.js
 // import React from 'react';
 import React, { useState } from 'react';
-import '../styling/HomePage.css'; // Updated import path
+import './Home.css';
 import { useNavigate } from 'react-router-dom';
-
+import backgroundImage from '../styling/images/cam_background.png';
 
 const Home = () => {
   const [name, setName] = useState('');
   const [education, setEducation] = useState('');
-  const [responseData, setResponseData] = useState(null);
-
   const navigate = useNavigate();
-
-  const handleNameChange = (e) => {
-    setName(e.target.value);
-  };
-
-  const handleEducationChange = (e) => {
-    setEducation(e.target.value);
-  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const formData = {
-      name: name,
-      education: education
-    };
+    
+    // First, validate the form
+    if (!name || !education) {
+      alert('Please fill in all fields');
+      return;
+    }
 
     try {
-      // Here we are submitting the form data to Flask
+      // Send data to backend
       const response = await fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, education }),
       });
 
-      // After form submission, redirect to /evaluation and pass the data via state
-      navigate('/evaluation', { state: { name: name, education: education } });
+      if (response.ok) {
+        // Immediately navigate to evaluation page
+        navigate('/evaluation', { 
+          state: { name, education },
+          replace: true  // This prevents going back to the form
+        });
+      } else {
+        // If server response wasn't ok, still navigate but show warning
+        console.warn('Server response was not ok, but continuing navigation');
+        navigate('/evaluation', { 
+          state: { name, education },
+          replace: true
+        });
+      }
     } catch (error) {
       console.error('Error submitting form:', error);
+      // Even if there's an error with the backend, still navigate
+      navigate('/evaluation', { 
+        state: { name, education },
+        replace: true
+      });
     }
   };
 
-    return (
-        <nav> 
-            <div className="home-page">
-                    <p>&nbsp;</p>
-                    <h1>Welcome to the Home Page</h1>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p1>This is the home page of the application.</p1>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-            </div>
-            <div className="form">
-                <p>&nbsp;</p>
-                <p>&nbsp;</p>
-                <h1>Hop On Aboard, Captain!</h1>
-                <h2>Submit Your Information</h2>
-                <p>&nbsp;</p>
-                <form onSubmit={handleSubmit}>
-                    <div>
-                    <label>
-                        <p2>Name: &nbsp;</p2>
-                        <input
-                        type="text"
-                        value={name}
-                        onChange={handleNameChange}
-                        required
-                        />
-                    </label>
-                    </div>
-                    <p>&nbsp;</p>
-                    <div>
-                    <label>
-                        <p2>Education Level: &nbsp;</p2>
-                        <select
-                        value={education}
-                        onChange={handleEducationChange}
-                        required
-                        >
-                        <option value="">Select Education Level</option>
-                        <option value="Elementary">Elementary</option>
-                        <option value="Middle">Middle School</option>
-                        <option value="Highschool">High School</option>
-                        <option value="University">University</option>
-                        </select>
-                    </label>
-                    </div>
-                    <p>&nbsp;</p>
-                    <button className = "button" type="submit">Submit</button>
-                    <p>&nbsp;</p>
+  return (
+    <div 
+      className="home-container" 
+      style={{
+        backgroundImage: `linear-gradient(135deg, rgba(26, 35, 126, 0.8) 0%, rgba(13, 71, 161, 0.8) 100%), url(${backgroundImage})`,
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat'
+      }}
+    >
+      <div className="form-container">
+        <div className="title-container">
+          <h1>Teaching Monitor</h1>
+          <h2>Enhance Your Teaching Skills</h2>
+        </div>
+        
+        <form onSubmit={handleSubmit}>
+          <div className="input-group">
+            <label htmlFor="name">Name</label>
+            <input
+              id="name"
+              type="text"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+              placeholder="Enter your name"
+            />
+          </div>
 
-                </form>
+          <div className="input-group">
+            <label htmlFor="education">Education Level</label>
+            <select
+              id="education"
+              value={education}
+              onChange={(e) => setEducation(e.target.value)}
+              required
+            >
+              <option value="">Select Education Level</option>
+              <option value="Elementary">Elementary</option>
+              <option value="Middle">Middle School</option>
+              <option value="Highschool">High School</option>
+              <option value="University">University</option>
+            </select>
+          </div>
 
-                {/* {responseData && (
-                    <div className="response">
-                      <p2>Submitted Data:<br/></p2>
-                      <br/>
-                      <p1>Name: {responseData.submitted_data.name}<br/></p1>
-                      <p1>Education Level: {responseData.submitted_data.education}</p1>
-                      <p>&nbsp;</p>
-                      <p>&nbsp;</p>
-                    </div>
-                )} */}
-            </div>
-            
-        </nav>
-    );
-    
-}
-
+          <button type="submit" className="submit-button">
+            Start Journey
+          </button>
+        </form>
+      </div>
+      <div className="floating-elements">
+        {[...Array(10)].map((_, i) => (
+          <div
+            key={i}
+            className="floating-element"
+            style={{
+              left: `${Math.random() * 100}%`,
+              width: `${Math.random() * 50 + 20}px`,
+              height: `${Math.random() * 50 + 20}px`,
+              animationDelay: `${Math.random() * 20}s`,
+              animationDuration: `${Math.random() * 20 + 10}s`
+            }}
+          />
+        ))}
+      </div>
+    </div>
+  );
+};
 
 export default Home;

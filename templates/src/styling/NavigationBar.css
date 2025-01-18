@@ -5,15 +5,17 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    position: relative;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .logo-title {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
     gap: 10px;
 }
 
@@ -21,9 +23,8 @@
     list-style-type: none;
     display: flex;
     justify-content: flex-end;
-    flex-grow: 1;
     margin: 0;
-    padding: 0 20px;
+    padding: 0;
     gap: 20px;
 }
 
@@ -35,24 +36,18 @@
 .navigation-bar a {
     color: #ffffff;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 30px;
-    padding: 5px 10px;
-    display: inline-block;
-    /* Ensures transform works */
-    transition: color 0.3s ease, transform 0.3s ease;
-    /* Smooth transition for hover effects */
+    font-weight: 500;
+    font-size: 1.1rem;
+    padding: 8px 16px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
 }
 
 .navigation-bar a:hover {
-    color: #61dafb;
-    transform: scale(1.2);
-    /* Enlarges the link on hover */
+    background: rgba(255, 255, 255, 0.1);
+    transform: translateY(-1px);
 }
 
 .title {
-    color: #ffffff;
-    font-size: 24px;
-    font-weight: bold;
-    margin-left: 10px;
+    display: none;
 }

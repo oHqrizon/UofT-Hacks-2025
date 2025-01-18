@@ -50,18 +50,6 @@ function Evaluation() {
                             </div>
                         </div>
                         
-                        {sessionResults.detailed_breakdown && (
-                            <div className="detailed-metrics">
-                                <h4>Detailed Breakdown</h4>
-                                <ul>
-                                    <li>Neutral Responses: {sessionResults.detailed_breakdown.neutral_percent}%</li>
-                                    <li>Positive Responses: {sessionResults.detailed_breakdown.positive_percent}%</li>
-                                    <li>Negative Responses: {sessionResults.detailed_breakdown.negative_percent}%</li>
-                                    <li>Total Disengagement Time: {sessionResults.detailed_breakdown.total_face_absence_time}s</li>
-                                </ul>
-                            </div>
-                        )}
-
                         <button 
                             className="start-button"
                             onClick={() => {

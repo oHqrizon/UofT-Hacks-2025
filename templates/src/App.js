@@ -12,9 +12,6 @@ function App() {
     <Router>
       <div className="App">
         <NavigationBar />
-        <header className="App-header">
-          <h1>Teaching Effectiveness Monitor</h1>
-        </header>
         <main>
           <Routes>
             <Route path="/" element={<Home />} />
