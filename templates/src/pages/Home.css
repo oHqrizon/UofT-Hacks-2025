@@ -21,10 +21,10 @@
     bottom: 0;
     background-image: url('../styling/images/cam_background.png');
     background-size: cover;
-    background-position: center;
+    background-position: right center;
     background-repeat: no-repeat;
-    opacity: 0.2;
-    z-index: -1;
+    opacity: 0.4;
+    z-index: 0;
 }
 
 /* Floating particles effect */
@@ -41,12 +41,12 @@
 }
 
 .form-container {
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 3.5rem;
+    padding: 40px;
     border-radius: 24px;
     width: 100%;
-    max-width: 560px;
+    max-width: 500px;
     animation: fadeIn 0.6s ease-out;
     position: relative;
     z-index: 1;

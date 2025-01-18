@@ -1,4 +1,4 @@
-from flask import Flask, Response, jsonify, render_template
+from flask import Flask, Response, jsonify, render_template, request, session
 from emotion_cam import EmotionDetector
 import cv2
 import threading
@@ -14,6 +14,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 app = Flask(__name__)
+app.secret_key = os.urandom(24)  # Required for session
 CORS(app, resources={
     r"/api/*": {
         "origins": ["http://localhost:3000", "http://127.0.0.1:3000"],
@@ -228,6 +229,17 @@ def cleanup():
     except Exception as e:
         logger.error(f"Cleanup error: {str(e)}")
         return jsonify({"error": str(e)}), 500
+
+@app.route('/api/set-subject', methods=['POST'])
+def set_subject():
+    data = request.get_json()
+    subject = data.get('subject')
+    if not subject:
+        return jsonify({'error': 'Subject is required'}), 400
+    
+    # Store the subject in session for later use
+    session['teaching_subject'] = subject
+    return jsonify({'message': 'Subject set successfully'}), 200
 
 if __name__ == '__main__':
     # Add more detailed logging for startup

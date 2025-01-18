@@ -1,95 +1,136 @@
 .emotion-detection {
-    padding: 20px;
-    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    width: 100%;
+    max-width: 1200px;
     margin: 0 auto;
 }
 
-.emotion-detection.loading,
-.emotion-detection.error {
-    text-align: center;
-    padding: 40px;
-    background: #f5f5f5;
-    border-radius: 8px;
-    margin: 20px 0;
-}
-
 .video-container {
+    position: relative;
     width: 100%;
-    margin-bottom: 20px;
-    border-radius: 8px;
+    max-width: 800px;
+    border-radius: 24px;
     overflow: hidden;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.3);
 }
 
-.video-feed {
+.video-container img {
     width: 100%;
     height: auto;
     display: block;
 }
 
-.live-metrics {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 20px;
-    margin-bottom: 20px;
+.stop-button {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 1.25rem 3rem;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: white;
+    background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    box-shadow: 0 8px 30px rgba(211, 47, 47, 0.3);
 }
 
-.metric-item {
-    background: #f5f5f5;
-    padding: 15px;
-    border-radius: 8px;
-    text-align: center;
+.stop-button:hover {
+    transform: translateX(-50%) translateY(-2px);
+    box-shadow: 0 12px 40px rgba(211, 47, 47, 0.4);
+    background: linear-gradient(135deg, #ef5350 0%, #d32f2f 100%);
 }
 
-.metric-item label {
-    display: block;
-    margin-bottom: 5px;
-    color: #666;
-}
-
-.metric-item span {
-    font-size: 24px;
-    font-weight: bold;
-    color: #2c3e50;
-}
-
-.end-session-button {
+.metrics {
     width: 100%;
-    padding: 12px;
-    background-color: #e74c3c;
+    padding: 2rem;
+}
+
+.metrics h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
     color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.end-session-button:hover {
-    background-color: #c0392b;
-}
-
-.retry-button {
-    margin-top: 20px;
-    padding: 12px 24px;
-    background-color: #3498db;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-    transition: background-color 0.3s;
-}
-
-.retry-button:hover {
-    background-color: #2980b9;
-}
-
-.error-message {
-    background-color: #fee;
-    color: #c0392b;
-    padding: 10px;
-    border-radius: 4px;
-    margin-bottom: 20px;
     text-align: center;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.metric-card {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.metric-card:hover {
+    transform: translateY(-5px);
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+}
+
+.metric-card h4 {
+    color: white;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 1rem;
+    opacity: 0.9;
+}
+
+.metric-value {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #64B5F6 0%, #2196F3 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-shadow: 0 2px 10px rgba(33, 150, 243, 0.3);
+}
+
+.error {
+    background: rgba(211, 47, 47, 0.1);
+    color: #ef5350;
+    padding: 1rem 2rem;
+    border-radius: 12px;
+    border: 1px solid rgba(211, 47, 47, 0.2);
+    margin-bottom: 1rem;
+    width: 100%;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+@media (max-width: 768px) {
+    .video-container {
+        border-radius: 16px;
+    }
+
+    .stop-button {
+        padding: 1rem 2rem;
+        font-size: 1.1rem;
+        bottom: 1.5rem;
+    }
+
+    .metrics h3 {
+        font-size: 1.8rem;
+    }
+
+    .metric-value {
+        font-size: 2rem;
+    }
 } 
