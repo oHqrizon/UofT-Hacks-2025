@@ -5,8 +5,9 @@ scipy==1.10.1                # Scientific computing
 argparse==1.4.0              # Argument parsing
 
 # Web Development
-flask==2.2.2                 # Lightweight web framework
+flask               # Lightweight web framework
 flask-cors==3.0.10           # Cross-Origin Resource Sharing for Flask
+
 django==4.2.2                # Full-stack web framework (if using Django)
 
 # Computer Vision
