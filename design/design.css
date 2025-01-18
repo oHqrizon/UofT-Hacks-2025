@@ -1,0 +1,74 @@
+/* CSS for the website background */
+
+/*add in html
+<link href="https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap" rel="stylesheet">
+*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zilla+Slab&display=swap');
+
+
+@font-face {
+    font-family: 'Robot Reavers';
+    src: url('Robot Reavers.ttf') format('truetype');
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background1: url('images/draft.png') no-repeat center center fixed;
+    background2: url('images/faded_rocket.png') no-repeat center center fixed;
+    background3: url('images/faded_symbol.png') no-repeat center center fixed;
+    background4: url('images/rocket_symbol.png') no-repeat center center fixed;
+    background5: url('images/gradient.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+}
+
+/* Optional: Center content */
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+    font-family: 'Roboto Slab', serif;
+}
+
+p {
+    font-size: 1.5rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7);
+    font-family: 'Zilla Slab', serif;
+}
+
+/* Styling for teaching page */
+.teaching-page {
+    background: url('images/cam_background.png') no-repeat center center fixed;
+    background-size: cover;
+}
+
+.teaching-page h1, .intro-page h2 {
+    font-family: 'Zilla Slab', serif;
+    color: #fff;
+}
+
+/* Styling for introduction page */
+.intro-page {
+    background1: url('images/who_are_we_background_notint.png') no-repeat center center fixed;
+    background2: url('images/who_are_we_background_tint.png') no-repeat center center fixed;
+    background-size: cover;
+    color: #fff;
+    font-family: 'Zilla Slab', serif;
+}
+
+.intro-page h1, .intro-page h2 {
+    font-family: 'Robot Reavers', serif;
+    color: #2BDD7F;
+}
+
