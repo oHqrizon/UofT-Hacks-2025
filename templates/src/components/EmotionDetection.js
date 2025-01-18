@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
-import './EmotionDetection.css';
+import '../styling/EmotionDetection.css';
 
 const EmotionDetection = ({ onSessionEnd }) => {
     const [isActive, setIsActive] = useState(false);

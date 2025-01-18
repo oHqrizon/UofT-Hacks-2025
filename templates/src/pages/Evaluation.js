@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import EmotionDetection from '../components/EmotionDetection';
-import './Evaluation.css';
+import '../styling/EvaluationPage.css';
 
 function Evaluation() {
     const [isSessionActive, setIsSessionActive] = useState(false);
