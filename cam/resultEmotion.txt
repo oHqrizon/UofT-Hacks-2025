@@ -5,17 +5,20 @@ Teaching Proficiency Analysis
   Impression                 : Bad
   Overall Emotional Response : Neutral
 
-  Teaching Proficiency Score : 28.83%
-  Emotional Consistency     : 66.99%
-  Confidence Level          : -9.32%
+  Teaching Effectiveness     : 43.2%
+  Engagement Level          : 100.0%
+  Confusion Level           : 14.0%
+  Face Presence             : 0%
+  Face Absence Time         : 141.0 seconds
+  Emotional Balance         : 15.33%
 
-  Percentage Neutral  : 1000.0 % 
-  Percentage Positive : 1900.0 % 
-  Percentage Negative : 7400.0 % 
+  Percentage Neutral  : 5200.0 % 
+  Percentage Positive : 4700.0 % 
+  Percentage Negative : 12500.0 % 
 
-  Neutral Count   : 10
-  Positive Count  : 19
-  Negative Count  : 74
+  Neutral Count   : 52
+  Positive Count  : 47
+  Negative Count  : 125
 
 Detailed Emotion Breakdown:
   Neutral:   100.0 % 
