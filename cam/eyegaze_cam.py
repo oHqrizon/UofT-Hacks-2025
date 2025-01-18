@@ -2,7 +2,7 @@
 Demonstration of the GazeTracking library.
 Check the README.md for complete documentation.
 """
-#import imutils
+import imutils
 import cv2
 from cam.gaze_tracking import GazeTracking
 import time, datetime
