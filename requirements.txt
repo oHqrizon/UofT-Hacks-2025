@@ -1,5 +1,5 @@
 # Core Python Libraries
-numpy==1.24.3                # Numerical computing
+numpy==1.23.5                # Numerical computing
 pandas==1.5.3                # Data manipulation and analysis
 scipy==1.10.1                # Scientific computing
 argparse==1.4.0              # Argument parsing
@@ -9,13 +9,14 @@ flask==2.2.2                 # Lightweight web framework
 flask-cors==3.0.10           # Cross-Origin Resource Sharing for Flask
 django==4.2.2                # Full-stack web framework (if using Django)
 
-#Computer Vision
+# Computer Vision
 opencv-python==4.7.0.72
 
 # Machine Learning
 scikit-learn==1.2.2          # Machine learning algorithms
 tensorflow==2.12.0           # Deep learning library
 torch==2.0.0                 # PyTorch, another deep learning library
+--extra-index-url https://download.pytorch.org/whl/cu116
 
 # Visualization
 matplotlib==3.7.1            # Data visualization
@@ -47,13 +48,3 @@ git+https://github.com/openai/whisper.git
 
 # Deployment
 boto3==1.26.0                # AWS SDK for Python
-
-# Audio Processing
-setuptools
-pyaudio
-SpeechRecognition
---extra-index-url https://download.pytorch.org/whl/cu116
-torch
-numpy
-git+https://github.com/openai/whisper.git
-
