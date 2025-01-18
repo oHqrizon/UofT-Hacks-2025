@@ -49,3 +49,25 @@ git+https://github.com/openai/whisper.git
 
 # Deployment
 boto3==1.26.0                # AWS SDK for Python
+<<<<<<< HEAD
+=======
+
+# Audio Processing
+setuptools
+pyaudio
+SpeechRecognition
+--extra-index-url https://download.pytorch.org/whl/cu116
+torch
+numpy
+<<<<<<< HEAD
+matplotlib
+opencv-python
+tensorflow
+argparse
+flask
+react
+=======
+git+https://github.com/openai/whisper.git
+
+>>>>>>> 3b47342a3855b214b6c0e10b6f01a85e919da40d
+>>>>>>> da1b9f737ba15f636421aff111d97412097aae9e
