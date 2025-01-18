@@ -1,9 +1,11 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';  // Import useNavigate
 
 const Form = () => {
   const [name, setName] = useState('');
   const [education, setEducation] = useState('');
-  const [responseData, setResponseData] = useState(null);
+  
+  const navigate = useNavigate();  // Initialize useNavigate hook
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -22,6 +24,7 @@ const Form = () => {
     };
 
     try {
+      // Here we are submitting the form data to Flask
       const response = await fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
         headers: {
@@ -30,8 +33,8 @@ const Form = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      setResponseData(data);  // Store the response data to display it
+      // After form submission, redirect to /evaluation and pass the data via state
+      navigate('/evaluation', { state: { name: name, education: education } });
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -70,14 +73,6 @@ const Form = () => {
         </div>
         <button type="submit">Submit</button>
       </form>
-
-      {responseData && (
-        <div className="response">
-          <h3>Submitted Data:</h3>
-          <p>Name: {responseData.submitted_data.name}</p>
-          <p>Education Level: {responseData.submitted_data.education}</p>
-        </div>
-      )}
     </div>
   );
 };
