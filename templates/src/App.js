@@ -7,7 +7,6 @@ import Results from './pages/Results';
 import Profile from './pages/Profile';
 import logo from './logo.svg';
 import './App.css';
-import HomeForm from './components/HomeForm';
 
 function App() {
   return (

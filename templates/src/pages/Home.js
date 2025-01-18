@@ -2,12 +2,16 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import '../styling/HomePage.css'; // Updated import path
+import { useNavigate } from 'react-router-dom';
+
 
 
 const Home = () => {
   const [name, setName] = useState('');
   const [education, setEducation] = useState('');
   const [responseData, setResponseData] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -26,6 +30,7 @@ const Home = () => {
     };
 
     try {
+      // Here we are submitting the form data to Flask
       const response = await fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
         headers: {
@@ -34,8 +39,8 @@ const Home = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      setResponseData(data);  // Store the response data to display it
+      // After form submission, redirect to /evaluation and pass the data via state
+      navigate('/evaluation', { state: { name: name, education: education } });
     } catch (error) {
       console.error('Error submitting form:', error);
     }
