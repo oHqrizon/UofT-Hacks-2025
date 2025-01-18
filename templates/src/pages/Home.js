@@ -100,16 +100,16 @@ const Home = () => {
 
                 </form>
 
-                {responseData && (
+                {/* {responseData && (
                     <div className="response">
-                    <p2>Submitted Data:<br/></p2>
-                    <br/>
-                    <p1>Name: {responseData.submitted_data.name}<br/></p1>
-                    <p1>Education Level: {responseData.submitted_data.education}</p1>
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
+                      <p2>Submitted Data:<br/></p2>
+                      <br/>
+                      <p1>Name: {responseData.submitted_data.name}<br/></p1>
+                      <p1>Education Level: {responseData.submitted_data.education}</p1>
+                      <p>&nbsp;</p>
+                      <p>&nbsp;</p>
                     </div>
-                )}
+                )} */}
             </div>
             
         </nav>
