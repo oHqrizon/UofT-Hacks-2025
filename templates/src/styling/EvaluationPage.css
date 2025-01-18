@@ -292,5 +292,31 @@ html, body {
     100% { transform: scale(1); opacity: 1; }
 }
 
+.user-info {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.user-info p {
+    margin: 0.3rem 0;
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #dff0ff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.user-session-info {
+    padding: 0.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.user-session-info p {
+    margin: 0.3rem 0;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #dff0ff;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
 
 

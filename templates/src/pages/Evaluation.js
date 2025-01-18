@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
+import { useLocation } from 'react-router-dom';
 import EmotionDetection from '../components/EmotionDetection';
 import '../styling/EvaluationPage.css';
 
 function Evaluation() {
+    const location = useLocation();
+    const { name, education } = location.state || {};
     const [isSessionActive, setIsSessionActive] = useState(false);
     const [sessionResults, setSessionResults] = useState(null);
     const [showSubjectPrompt, setShowSubjectPrompt] = useState(true);
@@ -55,6 +58,11 @@ function Evaluation() {
             <div className="evaluation-container">
                 <h2>Teaching Session Evaluation</h2>
                 
+                <div className="user-info">
+                    <p>Welcome <i>{name}</i>, we are judging your concept <br></br>to properly teach your subject at <i>{education}</i>&nbsp; level.</p>
+                </div>
+                <br></br>
+                
                 {showSubjectPrompt && !isLoading && !isSessionActive && !sessionResults && (
                     <div className="subject-prompt">
                         <h3>What subject will you be teaching?</h3>
@@ -88,6 +96,11 @@ function Evaluation() {
                 {sessionResults && !isSessionActive && !showSubjectPrompt && (
                     <div className="session-results">
                         <h3>Session Results</h3>
+                        <div className="user-session-info">
+                            <p>Teacher: {name}</p>
+                            <p>Education Level: {education}</p>
+                            <p>Subject: {subject}</p>
+                        </div>
                         <div className="results-grid">
                             <div className="result-card">
                                 <h4>Teaching Effectiveness</h4>
