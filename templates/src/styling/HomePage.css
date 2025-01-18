@@ -1,0 +1,82 @@
+/* Home Page CSS */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    font-family: 'Roboto Slab', serif;
+}
+
+.home-page {
+    background: url('images/cam_background.png');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+.form {
+    background: url('images/who_are_we_background_tinted.png');
+    background-size: 100% 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.container {
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 4rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin: 0;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+}
+
+p1 {
+    font-size: 1.5rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+p2 {
+    font-size: 2rem;
+    margin: 20px 0;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.button {
+    background-color: #4CAF50;  /* Green background */
+    color: white;               /* White text */
+    padding: 40px 60px;         /* Padding */
+    text-align: center;         /* Center text */
+    text-decoration: none;      /* No underline */
+    display: inline-block;      /* Inline display */
+    font-size: 16px;            /* Font size */
+    border-radius: 8px;         /* Rounded corners */
+    border: none;               /* No border */
+    cursor: pointer;           /* Pointer cursor */
+    transition: background-color 0.3s ease; /* Smooth transition */
+}
+
+/* Button hover effect */
+.button:hover {
+    background-color: #45a049; /* Slightly darker green */
+}
+
+/* Button active effect */
+.button:active {
+    background-color: #3e8e41; /* Even darker green */
+    transform: translateY(2px); /* Simulate pressing the button */
+}

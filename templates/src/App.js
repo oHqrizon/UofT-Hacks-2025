@@ -7,7 +7,6 @@ import Results from './pages/Results';
 import Profile from './pages/Profile';
 import logo from './logo.svg';
 import './App.css';
-import HomeForm from './components/HomeForm';
 
 function App() {
   return (
@@ -15,7 +14,7 @@ function App() {
       <div className="App">
         <NavigationBar />
         <Routes>
-          <Route path="/" element={<HomeForm />} />
+          <Route path="/" element={<Home />} />
           <Route path="/evaluation" element={<Evaluation />} />
           <Route path="/results" element={<Results />} />
           <Route path="/profile" element={<Profile />} />
