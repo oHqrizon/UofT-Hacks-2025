@@ -1,0 +1,58 @@
+/* src/NavigationBar.css */
+.navigation-bar {
+    background-color: #0055ff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.logo-title {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    gap: 10px;
+}
+
+.navigation-bar ul {
+    list-style-type: none;
+    display: flex;
+    justify-content: flex-end;
+    flex-grow: 1;
+    margin: 0;
+    padding: 0 20px;
+    gap: 20px;
+}
+
+.navigation-bar li {
+    display: inline;
+    margin: 0;
+}
+
+.navigation-bar a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 30px;
+    padding: 5px 10px;
+    display: inline-block;
+    /* Ensures transform works */
+    transition: color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effects */
+}
+
+.navigation-bar a:hover {
+    color: #61dafb;
+    transform: scale(1.2);
+    /* Enlarges the link on hover */
+}
+
+.title {
+    color: #ffffff;
+    font-size: 24px;
+    font-weight: bold;
+    margin-left: 10px;
+}
