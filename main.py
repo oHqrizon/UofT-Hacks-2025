@@ -15,7 +15,7 @@ def main():
 @app.route('/<usr>')
 def display(usr): #name as paramater
     selected_option = request.args.get('edu') #recieve edu variable 
-    return f'<h1>Welcome {usr}! Your education is {selected_option} level.</h1>'  
+    return render_template("start.html", usr=usr, selected_option=selected_option)
 
 if __name__ == '__main__':
     app.run(debug=True)
