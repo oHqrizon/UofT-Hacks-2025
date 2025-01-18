@@ -5,7 +5,7 @@ import '../styling/HomePage.css'; // Updated import path
 
 
 const Home = () => {
-    const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [education, setEducation] = useState('');
   const [responseData, setResponseData] = useState(null);
 
@@ -109,6 +109,8 @@ const Home = () => {
             
         </nav>
     );
+    
 }
+
 
 export default Home;
