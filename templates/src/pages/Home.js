@@ -2,12 +2,15 @@
 // import React from 'react';
 import React, { useState } from 'react';
 import '../styling/HomePage.css'; // Updated import path
+import { useNavigate } from 'react-router-dom';
 
 
 const Home = () => {
-    const [name, setName] = useState('');
+  const [name, setName] = useState('');
   const [education, setEducation] = useState('');
   const [responseData, setResponseData] = useState(null);
+
+  const navigate = useNavigate();
 
   const handleNameChange = (e) => {
     setName(e.target.value);
@@ -26,6 +29,7 @@ const Home = () => {
     };
 
     try {
+      // Here we are submitting the form data to Flask
       const response = await fetch('http://127.0.0.1:5000/submit', {
         method: 'POST',
         headers: {
@@ -34,8 +38,8 @@ const Home = () => {
         body: JSON.stringify(formData),
       });
 
-      const data = await response.json();
-      setResponseData(data);  // Store the response data to display it
+      // After form submission, redirect to /evaluation and pass the data via state
+      navigate('/evaluation', { state: { name: name, education: education } });
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -46,13 +50,14 @@ const Home = () => {
             <div className="home-page">
                     <p>&nbsp;</p>
                     <h1>Welcome to the Home Page</h1>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
                     <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
             </div>
             <div className="form">
                 <p>&nbsp;</p>
@@ -109,6 +114,8 @@ const Home = () => {
             
         </nav>
     );
+    
 }
+
 
 export default Home;

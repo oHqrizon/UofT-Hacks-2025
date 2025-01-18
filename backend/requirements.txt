@@ -1,5 +1,0 @@
-flask==2.0.1
-flask-cors==3.0.10
-opencv-python==4.5.3.56
-tensorflow==2.7.0
-numpy==1.19.5 
