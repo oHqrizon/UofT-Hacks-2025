@@ -1,5 +1,59 @@
+# Core Python Libraries
+numpy==1.24.3                # Numerical computing
+pandas==1.5.3                # Data manipulation and analysis
+scipy==1.10.1                # Scientific computing
+argparse==1.4.0              # Argument parsing
+
+# Web Development
+flask==2.2.2                 # Lightweight web framework
+flask-cors==3.0.10           # Cross-Origin Resource Sharing for Flask
+django==4.2.2                # Full-stack web framework (if using Django)
+
+#Computer Vision
+opencv-python==4.7.0.72
+
+# Machine Learning
+scikit-learn==1.2.2          # Machine learning algorithms
+tensorflow==2.12.0           # Deep learning library
+torch==2.0.0                 # PyTorch, another deep learning library
+
+# Visualization
+matplotlib==3.7.1            # Data visualization
+seaborn==0.12.2              # Statistical data visualization
+
+# APIs and HTTP Requests
+requests==2.28.1             # HTTP requests
+flask-restful==0.3.9         # RESTful APIs for Flask
+
+# Database
+sqlalchemy==2.0.9            # SQL toolkit and ORM
+psycopg2==2.9.6              # PostgreSQL adapter for Python
+
+# Utilities
+python-dotenv==1.0.0         # Environment variable management
+gunicorn==20.1.0             # Production WSGI server for Flask/Django
+
+# Testing
+pytest==7.2.2                # Testing framework
+pytest-django==4.5.2         # Django testing add-on for pytest
+pytest-flask==1.2.0          # Flask testing add-on for pytest
+
+# Speech and Audio Processing
+pyaudio==0.2.13              # Audio input/output
+speechrecognition==3.9.0     # Speech-to-text conversion
+
+# OpenAI Whisper (for Speech-to-Text AI)
+git+https://github.com/openai/whisper.git
+
+# Deployment
+boto3==1.26.0                # AWS SDK for Python
+
+# Audio Processing
+setuptools
+pyaudio
+SpeechRecognition
+--extra-index-url https://download.pytorch.org/whl/cu116
+torch
 numpy
-matplotlib
-opencv-python
-tensorflow
-argparse
+git+https://github.com/openai/whisper.git
+
