@@ -4,20 +4,20 @@ from flask_cors import CORS
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/', methods=["POST", "GET"])
-def main():
-    if request.method == 'POST': #if submitted data
-        #store name and education level
-        user = request.form['nm']
-        level = request.form['education'] 
-        return redirect(url_for('display', usr=user, edu=level)) #redirect to display function, but pass stored variables
-    else:
-        return render_template('home.html')
+# @app.route('/', methods=["POST", "GET"])
+# def main():
+#     if request.method == 'POST': #if submitted data
+#         #store name and education level
+#         user = request.form['nm']
+#         level = request.form['education'] 
+#         return redirect(url_for('display', usr=user, edu=level)) #redirect to display function, but pass stored variables
+#     else:
+#         return render_template('home.html')
     
-@app.route('/<usr>')
-def display(usr): #name as paramater
-    selected_option = request.args.get('edu') #recieve edu variable 
-    return render_template("start.html", usr=usr, selected_option=selected_option)
+# @app.route('/<usr>')
+# def display(usr): #name as paramater
+#     selected_option = request.args.get('edu') #recieve edu variable 
+#     return render_template("start.html", usr=usr, selected_option=selected_option)
 
 @app.route('/submit', methods=['POST'])
 def submit_form():
