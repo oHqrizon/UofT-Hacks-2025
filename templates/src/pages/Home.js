@@ -3,7 +3,7 @@
 import React, { useState } from 'react';
 import './Home.css';
 import { useNavigate } from 'react-router-dom';
-import backgroundImage from '../styling/images/cam_background.png';
+// import backgroundImage from '../../public/images/cam_background.png';
 
 const Home = () => {
   const [name, setName] = useState('');

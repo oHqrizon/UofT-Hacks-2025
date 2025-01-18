@@ -8,7 +8,7 @@ html, body {
     font-family: 'Arsenal SC', serif;
 }
 .profile-page {
-    background: url('images/profile.png');
+    background: url('../../public/images/profile.png');
     background-size: 100% 100%;
     display: flex;
     flex-direction: column;
@@ -23,12 +23,14 @@ html, body {
 }
 
 h {
+    font-family: 'Arsenal SC', serif;
     font-size: 5rem;
     margin: 0;
     text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
 }
 
 p{
+    font-family: 'Arsenal SC', serif;
     font-size: 3rem;
     margin: 20px 0;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);

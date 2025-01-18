@@ -14,7 +14,7 @@ function Profile() {
                 <h>&ensp;&emsp;&emsp;Profile</h>
                 <br/>
                 <br/>
-                <p>&emsp;&emsp;Name: {name}</p>
+                <p>&emsp;&emsp;&emsp;&emsp;Name: {name}</p>
                 <br/>
                 <p>&emsp;&emsp;&emsp;&emsp;Education: {education}</p>
                 <p>&nbsp;</p> 

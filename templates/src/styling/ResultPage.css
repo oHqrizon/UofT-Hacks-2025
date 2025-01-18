@@ -10,7 +10,7 @@ html, body {
 }
 
 .result-page {
-    background: url('images/rocket_symbol.png');
+    background: url('../../public/images/rocket_symbol.png');
     background-size: cover;
     display: flex;
     flex-direction: column;
