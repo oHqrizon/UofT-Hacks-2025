@@ -1,0 +1,27 @@
+Participant Detection and Emotion Recognition 
+Teaching Proficiency Analysis 
+
+  Presence                   : Yes
+  Impression                 : Bad
+  Overall Emotional Response : Neutral
+
+  Teaching Proficiency Score : 28.83%
+  Emotional Consistency     : 66.99%
+  Confidence Level          : -9.32%
+
+  Percentage Neutral  : 1000.0 % 
+  Percentage Positive : 1900.0 % 
+  Percentage Negative : 7400.0 % 
+
+  Neutral Count   : 10
+  Positive Count  : 19
+  Negative Count  : 74
+
+Detailed Emotion Breakdown:
+  Neutral:   100.0 % 
+  Happy:     0.0 % 
+  Sad:       0.0 % 
+  Angry:     0.0 % 
+  Scared:    0.0 % 
+  Surprised: 0.0 % 
+  Disgust:   0.0 % 
