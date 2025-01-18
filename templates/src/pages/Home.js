@@ -52,8 +52,8 @@ const Home = () => {
           >
             <option value="">Select Education Level</option>
             <option value="Elementary">Elementary</option>
-            <option value="Middle">Middle School</option>
-            <option value="Highschool">High School</option>
+            <option value="Middle School">Middle School</option>
+            <option value="High school">High School</option>
             <option value="University">University</option>
           </select>
         </div>

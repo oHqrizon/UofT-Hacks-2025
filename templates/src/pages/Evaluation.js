@@ -3,6 +3,10 @@ import { useLocation } from 'react-router-dom';
 import EmotionDetection from '../components/EmotionDetection';
 import '../styling/EvaluationPage.css';
 
+function capitalizeFirstLetter(val) {
+    return String(val).charAt(0).toUpperCase() + String(val).slice(1);
+}
+
 function Evaluation() {
     const location = useLocation();
     const { name, education } = location.state || {};
@@ -59,7 +63,7 @@ function Evaluation() {
                 <h2>Teaching Session Evaluation</h2>
                 
                 <div className="user-info">
-                    <p>Welcome <i>{name}</i>, we are judging your concept <br></br>to properly teach your subject at <i>{education}</i>&nbsp; level.</p>
+                    <p>Welcome <i>{capitalizeFirstLetter(name)}</i>, we are judging your concept <br></br>to properly teach your subject at <i>{capitalizeFirstLetter(education)}</i>&nbsp; level.</p>
                 </div>
                 <br></br>
                 
