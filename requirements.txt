@@ -3,3 +3,5 @@ matplotlib
 opencv-python
 tensorflow
 argparse
+flask
+react
