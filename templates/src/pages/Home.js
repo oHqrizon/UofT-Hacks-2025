@@ -5,7 +5,6 @@ import '../styling/HomePage.css'; // Updated import path
 import { useNavigate } from 'react-router-dom';
 
 
-
 const Home = () => {
   const [name, setName] = useState('');
   const [education, setEducation] = useState('');
@@ -51,13 +50,14 @@ const Home = () => {
             <div className="home-page">
                     <p>&nbsp;</p>
                     <h1>Welcome to the Home Page</h1>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
                     <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
-                    <p1>This is the home page of the application.</p1>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
+                    <p>&nbsp;</p>
             </div>
             <div className="form">
                 <p>&nbsp;</p>

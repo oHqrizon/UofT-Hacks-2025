@@ -10,17 +10,12 @@ function Profile() {
             <div>
                 <p>&nbsp;</p> 
                 <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
+                <p>&nbsp;</p> 
                 <h1>&nbsp;pfp</h1>
-                <p>
-                    Name:
-                    {/* <script type="text/javascript">
-                    document.write(profile.name)
-                    </script> */}
-                </p>
-                <p>This is the home page of the application.</p>
-                <p>This is the home page of the application.</p>
-                <p>This is the home page of the application.</p>
-                <p>This is the home page of the application.</p>
+                <p>Name:</p>
+                <p>Education:</p>
+                <p>&nbsp;</p> 
                 <p>&nbsp;</p> 
                 <p>&nbsp;</p> 
                 <p>&nbsp;</p> 

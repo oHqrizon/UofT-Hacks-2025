@@ -7,7 +7,8 @@ function Results() {
         <nav className="result-page">
             <div>
                 <p>&nbsp;</p> 
-                <h1>Results</h1>
+                <h2>Results</h2>
+                <p>&nbsp;</p> 
                 <p>This is the home page of the application.</p>
                 <p>This is the home page of the application.</p>
                 <p>This is the home page of the application.</p>
