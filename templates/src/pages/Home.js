@@ -5,6 +5,7 @@ import '../styling/Home.css';
 import { useNavigate } from 'react-router-dom';
 // import backgroundImage from '../../public/images/cam_background.png';
 
+
 const Home = () => {
   const [name, setName] = useState('');
   const [education, setEducation] = useState('');
