@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import EmotionDetection from '../components/EmotionDetection';
 import '../styling/EvaluationPage.css';
+import axios from 'axios';
 
 function capitalizeFirstLetter(val) {
     return String(val).charAt(0).toUpperCase() + String(val).slice(1);
@@ -21,39 +22,39 @@ function Evaluation() {
         if (subject.trim()) {
             try {
                 setIsLoading(true);
-                // Set subject
-                await fetch('/api/set-subject', {
-                    method: 'POST',
-                    headers: {
-                        'Content-Type': 'application/json',
-                    },
-                    body: JSON.stringify({ subject }),
+                
+                // TEMPORARY: Skip camera test and just start transcription
+                const response = await axios.post('http://localhost:5000/api/start-session', {
+                    subject: subject
                 });
-
-                // Test camera
-                const cameraTest = await fetch('/api/test-camera');
-                if (!cameraTest.ok) {
-                    throw new Error('Camera test failed');
-                }
-
-                // If camera test passes, start session
+                
+                // Even if camera fails, proceed with session
                 setShowSubjectPrompt(false);
                 setIsSessionActive(true);
+                setIsLoading(false);
             } catch (error) {
                 console.error('Error starting session:', error);
-                alert('Failed to start camera. Please check your camera permissions and try again.');
-            } finally {
+                // TEMPORARY: Continue even if there's an error
+                setShowSubjectPrompt(false);
+                setIsSessionActive(true);
                 setIsLoading(false);
             }
         }
     };
 
-    const handleSessionEnd = (results) => {
-        if (results && results.final_metrics) {
-            setSessionResults(results);
-            setIsSessionActive(false);
-            setSubject('');
-            setShowSubjectPrompt(false);
+    const handleSessionEnd = async (results) => {
+        try {
+            // Stop session (stops both emotion detection and transcription)
+            await axios.post('http://localhost:5000/api/stop-session');
+            
+            if (results && results.final_metrics) {
+                setSessionResults(results);
+                setIsSessionActive(false);
+                setSubject('');
+                setShowSubjectPrompt(false);
+            }
+        } catch (error) {
+            console.error('Error stopping session:', error);
         }
     };
 

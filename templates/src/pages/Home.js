@@ -33,6 +33,12 @@ const Home = () => {
       </div>
 
       <div className="form-container">
+          <div className="input-group">
+            <label> Cognspective is a platform designed to help users develop a deeper understanding of concepts by teaching them from various perspectives, ranging from elementary school to university level. By explaining a topic at different educational levels, users are encouraged to fully grasp the material, as teaching others requires a thorough comprehension of the subject. This approach not only reinforces the user's knowledge but also enhances their ability to communicate complex ideas in simpler terms, fostering both mastery of the content and effective teaching skills. </label>
+          </div>
+        </div>
+      <br/>
+      <div className="form-container">
         <div className="input-group">
           <label>Name</label>
           <input
@@ -58,6 +64,8 @@ const Home = () => {
             <option value="University">University</option>
           </select>
         </div>
+        
+        
 
         <button type="submit" className="submit-button" onClick={handleSubmit}>
           Continue to Evaluation
