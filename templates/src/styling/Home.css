@@ -48,9 +48,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../public/images/cam_background.png');
+    background-image: url('../../public/images/homepage.png');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     opacity: 0.4;
     z-index: 0;
@@ -134,6 +134,7 @@ body {
 .form-container {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
+    margin: 2rem 0;
     padding: 3rem 4rem;
     border-radius: 24px;
     width: 100%;
@@ -151,8 +152,82 @@ body {
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
-.input-group {
-    margin-bottom: 2rem;
+.text-container-top {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 1rem 4rem;
+    margin: 2rem 0;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px;
+    animation: fadeIn 0.6s ease-out;
+    position: relative;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    margin-bottom: 4rem;
+    text-align: center;
+}
+
+.text-container-top:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
+}
+
+.text-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    gap: 1rem;
+}
+
+.text-container-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 600px;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Center the container */
+}
+
+.text-container-bottom-right,.text-container-bottom-left {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 24px;
+    max-width: 400px;
+    animation: fadeIn 0.6s ease-out;
+    z-index: 2;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    flex: 1;
+    margin: 0;
+    text-align: center;
+}
+
+.text-container-bottom-right {
+    padding: 1rem 4rem;
+    min-width: 400px;
+    position: absolute;
+    left: 56%; 
+    top: 36.5%; 
+}
+
+.text-container-bottom-left {
+    padding: 1rem 5rem;
+    position: relative;
+    right: 30%; 
+}
+
+.text-container-bottom-right:hover,
+.text-container-bottom-left:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.4);
 }
 
 .input-group label {
@@ -162,6 +237,7 @@ body {
     font-size: 1.1rem;
     font-weight: 600;
     letter-spacing: -0.01em;
+    padding-top: 0.5rem;
 }
 
 .input-group input,
@@ -325,4 +401,12 @@ body {
     .input-group select {
         padding: 1rem 1.25rem;
     }
+}
+
+.text-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
 }
