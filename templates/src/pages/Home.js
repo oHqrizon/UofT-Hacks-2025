@@ -27,6 +27,8 @@ const Home = () => {
 
   return (
     <div className="home-container">
+      <br/>
+      <br/>
       <div className="title-section">
         <h1>Cognspective</h1>
         <h2>Enhance YOUR learning.</h2>
