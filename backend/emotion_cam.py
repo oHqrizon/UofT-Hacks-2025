@@ -169,7 +169,9 @@ class EmotionDetector:
 
             total_time = current_time - self.start_time
             if total_time > 0:
-                self.face_presence_percentage = max(0, min(100, 100 * (1 - (self.total_face_absence_time / total_time) * 2)))
+                absence_factor = (self.total_face_absence_time / total_time) * 0.3
+                recovery_factor = 10  # Adjust this value to control recovery speed
+                self.face_presence_percentage = min(100, 100 * (1 - absence_factor) + recovery_factor)
 
             self._calculate_teaching_effectiveness()
             self._add_metrics_to_frame(frame)
