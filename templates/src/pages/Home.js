@@ -50,7 +50,7 @@ const Home = () => {
           </div>
 
         </div>
-
+      <br/>
       </div>
       <div className="form-container">
         <div className="input-group">

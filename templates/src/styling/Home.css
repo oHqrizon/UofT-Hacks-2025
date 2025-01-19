@@ -48,9 +48,9 @@ body {
     left: 0;
     right: 0;
     bottom: 0;
-    background-image: url('../../public/images/cam_background.png');
+    background-image: url('../../public/images/homepage.png');
     background-size: cover;
-    background-position: center;
+    background-position: bottom;
     background-repeat: no-repeat;
     opacity: 0.4;
     z-index: 0;
@@ -195,29 +195,33 @@ body {
     /* Center the container */
 }
 
-.text-container-bottom-right,
-.text-container-bottom-left {
+.text-container-bottom-right,.text-container-bottom-left {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
-    padding: 1rem 4rem;
     border-radius: 24px;
     max-width: 400px;
     animation: fadeIn 0.6s ease-out;
-    position: relative;
     z-index: 2;
     border: 1px solid rgba(255, 255, 255, 0.3);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
     transition: all 0.3s ease;
     flex: 1;
     margin: 0;
+    text-align: center;
 }
 
 .text-container-bottom-right {
-    float: right;
+    padding: 1rem 4rem;
+    min-width: 400px;
+    position: absolute;
+    left: 56%; 
+    top: 36.5%; 
 }
 
 .text-container-bottom-left {
-    float: left;
+    padding: 1rem 5rem;
+    position: relative;
+    right: 30%; 
 }
 
 .text-container-bottom-right:hover,
