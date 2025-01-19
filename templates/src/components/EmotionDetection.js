@@ -11,13 +11,11 @@ const EmotionDetection = ({ onSessionEnd }) => {
 
     const startDetection = async () => {
         try {
-            // Start emotion detection
-            await axios.post('http://localhost:5000/api/start-emotion-detection');
             setIsActive(true);
             
             // Start video stream
             if (videoRef.current) {
-                videoRef.current.src = 'http://localhost:5000/api/video-feed';
+                videoRef.current.src = 'http://localhost:5000/video_feed';
             }
             
             // Start metrics polling
@@ -31,9 +29,7 @@ const EmotionDetection = ({ onSessionEnd }) => {
 
     const stopDetection = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/api/stop-emotion-detection');
-            const finalResults = response.data;
-            await axios.post('http://localhost:5000/api/cleanup');
+            await axios.post('http://localhost:5000/api/stop-session');
             setIsActive(false);
             if (metricsIntervalRef.current) {
                 clearInterval(metricsIntervalRef.current);
@@ -41,8 +37,8 @@ const EmotionDetection = ({ onSessionEnd }) => {
             if (videoRef.current) {
                 videoRef.current.src = '';
             }
-            if (onSessionEnd && finalResults) {
-                onSessionEnd(finalResults);
+            if (onSessionEnd && metrics) {
+                onSessionEnd({ final_metrics: metrics });
             }
         } catch (err) {
             console.error('Error stopping detection:', err);
@@ -60,20 +56,8 @@ const EmotionDetection = ({ onSessionEnd }) => {
         }
     };
 
-    // Start detection automatically when component mounts
     useEffect(() => {
-        const initializeDetection = async () => {
-            try {
-                await startDetection();
-            } catch (err) {
-                console.error('Failed to initialize detection:', err);
-                setError('Failed to start camera. Please try again.');
-            }
-        };
-
-        initializeDetection();
-
-        // Cleanup function
+        startDetection();
         return () => {
             if (metricsIntervalRef.current) {
                 clearInterval(metricsIntervalRef.current);

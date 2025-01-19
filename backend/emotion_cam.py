@@ -22,6 +22,7 @@ class EmotionDetector:
             # Initialize variables
             self.cap = None
             self.camera_manager = CameraManager.get_instance()
+            self.is_running = False
             
             # Set up paths
             self.base_path = os.path.dirname(os.path.abspath(__file__))
@@ -39,6 +40,34 @@ class EmotionDetector:
             print(f"Initialization error: {str(e)}")
             self.release()
             raise
+
+    def start(self):
+        """Start the emotion detection process"""
+        print("Starting emotion detection...")
+        self.is_running = True
+        return True
+
+    def stop(self):
+        """Stop the emotion detection process"""
+        print("Stopping emotion detection...")
+        self.is_running = False
+        self.release()
+
+    def get_frame(self):
+        """Process a frame and return it encoded as JPEG"""
+        if not self.is_running:
+            return None
+            
+        frame, metrics = self.process_frame()
+        if frame is None:
+            return None
+            
+        # Encode the frame as JPEG
+        ret, jpeg = cv2.imencode('.jpg', frame)
+        if not ret:
+            return None
+            
+        return jpeg.tobytes()
 
     def _init_variables(self):
         self.emotion_dict = {0: "Angry", 1: "Disgusted", 2: "Fearful", 3: "Happy", 4: "Neutral", 5: "Sad", 6: "Surprised"}
