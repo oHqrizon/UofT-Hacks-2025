@@ -60,6 +60,14 @@ function Evaluation() {
 
     return (
         <div className="evaluation-page">
+            <div className="stars">
+                <div className="star"></div>
+                <div className="star"></div>
+                <div className="star"></div>
+                <div className="star"></div>
+                <div className="star"></div>
+            </div>
+
             <div className="evaluation-container">
                 <h2>Teaching Session Evaluation</h2>
                 

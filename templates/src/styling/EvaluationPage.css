@@ -31,13 +31,13 @@ html, body {
 }
 
 .evaluation-container {
-    max-width: 1200px;
+    max-width: 90%;
     width: 100%;
     margin: 0 auto;
     position: relative;
     z-index: 1;
     text-align: center;
-    padding: 2rem;
+    padding: 1rem;
 }
 
 .evaluation-container h2 {
@@ -50,8 +50,9 @@ html, body {
 }
 
 .start-session {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 3rem;
+    width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 24px;
@@ -110,8 +111,9 @@ html, body {
 
 /* Session results styling */
 .session-results {
-    margin-top: 3rem;
-    padding: 2rem;
+    margin-top: 2rem;
+    padding: 3rem;
+    width: 100%;
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     border-radius: 24px;
@@ -121,17 +123,22 @@ html, body {
 
 .results-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin: 2rem 0;
+    width: 100%;
 }
 
 .result-card {
     background: rgba(255, 255, 255, 0.95);
-    padding: 2rem;
+    padding: 2.5rem;
     border-radius: 16px;
     border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 
 .result-card:hover {
@@ -171,9 +178,10 @@ html, body {
 
 .subject-prompt {
     text-align: center;
-    max-width: 400px;
-    margin: 0 auto;
-    padding: 2rem;
+    max-width: 600px;
+    width: 90%;
+    margin: 2rem auto;
+    padding: 3rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 16px;
@@ -210,12 +218,13 @@ html, body {
 
 .loading-screen {
     text-align: center;
-    padding: 3rem;
+    padding: 4rem;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(10px);
     border-radius: 24px;
     border: 1px solid rgba(255, 255, 255, 0.2);
-    max-width: 500px;
+    max-width: 800px;
+    width: 90%;
     margin: 2rem auto;
     animation: fadeIn 0.5s ease-out;
 }
@@ -319,4 +328,107 @@ html, body {
 }
 
 
+/* Add shooting stars container */
+.stars {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+}
 
+/* Individual star styling */
+.star {
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background: linear-gradient(-135deg, rgba(255,255,255,0), #dff0ff);
+    border-radius: 50%;
+    opacity: 0;
+}
+
+/* Top-right stars */
+.star:nth-child(1) { top: 5%; right: 10%; animation: shoot-tr 4s linear infinite; animation-delay: 0s; }
+.star:nth-child(2) { top: 15%; right: 25%; animation: shoot-tr 4s linear infinite; animation-delay: 0.8s; }
+.star:nth-child(3) { top: 8%; right: 15%; animation: shoot-tr 4s linear infinite; animation-delay: 1.6s; }
+.star:nth-child(4) { top: 12%; right: 35%; animation: shoot-tr 4s linear infinite; animation-delay: 2.4s; }
+.star:nth-child(5) { top: 18%; right: 12%; animation: shoot-tr 4s linear infinite; animation-delay: 3.2s; }
+
+/* Top stars */
+.star:nth-child(6) { top: 0%; left: 30%; animation: shoot-t 4s linear infinite; animation-delay: 0.4s; }
+.star:nth-child(7) { top: 0%; left: 50%; animation: shoot-t 4s linear infinite; animation-delay: 1.2s; }
+.star:nth-child(8) { top: 0%; left: 70%; animation: shoot-t 4s linear infinite; animation-delay: 2.0s; }
+.star:nth-child(9) { top: 0%; left: 40%; animation: shoot-t 4s linear infinite; animation-delay: 2.8s; }
+.star:nth-child(10) { top: 0%; left: 60%; animation: shoot-t 4s linear infinite; animation-delay: 3.6s; }
+
+/* Top-left stars */
+.star:nth-child(11) { top: 0%; left: 5%; animation: shoot-tl 4s linear infinite; animation-delay: 0.2s; }
+.star:nth-child(12) { top: 2%; left: 15%; animation: shoot-tl 4s linear infinite; animation-delay: 1.0s; }
+.star:nth-child(13) { top: 4%; left: 8%; animation: shoot-tl 4s linear infinite; animation-delay: 1.8s; }
+.star:nth-child(14) { top: 6%; left: 20%; animation: shoot-tl 4s linear infinite; animation-delay: 2.6s; }
+.star:nth-child(15) { top: 8%; left: 12%; animation: shoot-tl 4s linear infinite; animation-delay: 3.4s; }
+.star:nth-child(16) { top: 3%; left: 25%; animation: shoot-tl 4s linear infinite; animation-delay: 0.5s; }
+.star:nth-child(17) { top: 5%; left: 18%; animation: shoot-tl 4s linear infinite; animation-delay: 1.3s; }
+.star:nth-child(18) { top: 7%; left: 22%; animation: shoot-tl 4s linear infinite; animation-delay: 2.1s; }
+.star:nth-child(19) { top: 1%; left: 28%; animation: shoot-tl 4s linear infinite; animation-delay: 2.9s; }
+.star:nth-child(20) { top: 4%; left: 32%; animation: shoot-tl 4s linear infinite; animation-delay: 3.7s; }
+
+/* Shooting animation from top-right */
+@keyframes shoot-tr {
+    0% {
+        transform: rotate(-45deg) translateX(0);
+        opacity: 1;
+        width: 2px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(-45deg) translateX(-450px);
+        opacity: 0;
+        width: 50px;
+    }
+}
+
+/* Shooting animation from top */
+@keyframes shoot-t {
+    0% {
+        transform: rotate(90deg) translateX(0);
+        opacity: 1;
+        width: 2px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(90deg) translateX(450px);
+        opacity: 0;
+        width: 50px;
+    }
+}
+
+/* Shooting animation from top-left */
+@keyframes shoot-tl {
+    0% {
+        transform: rotate(45deg) translateX(0);
+        opacity: 1;
+        width: 2px;
+    }
+    70% {
+        opacity: 1;
+    }
+    100% {
+        transform: rotate(45deg) translateX(450px);
+        opacity: 0;
+        width: 50px;
+    }
+}
+
+/* Make sure the evaluation container stays above the stars */
+.evaluation-container {
+    position: relative;
+    z-index: 1;
+}
